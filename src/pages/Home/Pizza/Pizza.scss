@@ -1,0 +1,121 @@
+.pizza {
+    &-parent {
+        margin: $fs-48 0;
+    }
+    &-container {
+        padding: 10px;
+    }
+    &-box {
+        width: 20%;
+        overflow: hidden;
+        margin-top: $fs-28;
+        &_image {
+            position: relative;
+            margin: $fs-8;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+            img {
+                transition: transform 0.5s ease;
+                display: block;
+                height: 100%;
+                width: 100%;
+            }
+            p {
+                @include posAbsolute("tr", 0, 10px);
+                border-radius: $fs-8;
+                background-color: $secondary-color;
+                color: $black-color;
+                padding: 0px 8px;
+                font-size: $fs-16;
+                animation: colorChange 2s infinite;
+            }
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        &_title {
+            text-align: center;
+            margin: $fs-16 0 $fs-8;
+            h2 {
+                font-size: $fs-20;
+                margin-bottom: 0;
+                @media (max-width: 767px) {
+                    font-size: $fs-16 !important;
+                }
+            }
+        }
+        &_price {
+            @include flexBox(center);
+            h3 {
+                font-size: $fs-14;
+            }
+            h4 {
+                font-size: $fs-14;
+                margin-left: $fs-12;
+            }
+        }
+        &_button-1 {
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+            justify-content: center;
+            background-color: $primary-color;
+            color: $white-color;
+            border-radius: $fs-8;
+            padding: 5px 10px;
+            font-weight: 400;
+            font-size: $fs-16;
+            transition: 0.5s;
+            &:hover {
+                color: $black-color;
+                background-color: $secondary-color;
+            }
+            @media (max-width: 991px) {
+                width: 50%;
+                font-size: $fs-14;
+            }
+            &.secondary {
+                background-color: transparent;
+                color: $primary-color;
+                border: 1px solid $primary-color;
+                border-radius: $fs-12;
+                transition: 0.5s;
+                &:hover {
+                    color: $black-color;
+                    border: 1px solid $secondary-color;
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+}
+@keyframes colorChange {
+    0% {
+        background-color: $secondary-color;
+    }
+    50% {
+        background-color: lighten($primary-color, 10%);
+        color: $white-color;
+    }
+    100% {
+        background-color: $secondary-color;
+    }
+}
+.slick-arrow {
+    right: -17px;
+
+    &::before {
+        opacity: 1 !important;
+        color: $primary-color !important;
+    }
+}
+.slick-prev {
+    left: -17px;
+    &::before {
+        opacity: 1 !important;
+        color: $primary-color !important;
+    }
+}

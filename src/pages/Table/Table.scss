@@ -1,0 +1,122 @@
+.table {
+    background-color: transparent !important;
+
+    &-title {
+        background-color: $secondary-color;
+        padding: $fs-40;
+        margin-top: $fs-20;
+
+        h3 {
+            font-size: $fs-20;
+        }
+    }
+
+    &-address {
+        display: flex;
+        flex-direction: column;
+
+        .address-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+            i {
+                margin-right: 12px;
+            }
+
+            a {
+                color: $black-color;
+                transition: 0.5s;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    h2 {
+        text-align: center;
+        margin: $fs-52 0 $fs-20 0;
+    }
+
+    &-form {
+        gap: 16px;
+        width: 80%;
+        margin: 0 auto;
+
+        &_input,
+        &_option {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+
+            input,
+            select {
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+                background-color: #fff; // Màu nền của input và select
+                width: 100%; // Độ rộng 100%
+
+                &:focus {
+                    outline: none;
+                    border-color: $primary-color; // Sử dụng biến SCSS nếu có
+                }
+            }
+
+            .error {
+                color: red;
+                font-size: 14px;
+                margin-top: 4px;
+            }
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            background-color: $primary-color;
+            color: $white-color;
+            border-radius: $fs-8;
+            padding: 10px 10px;
+            font-weight: 400;
+            margin-top: $fs-20;
+            margin: $fs-32 auto;
+            width: 60%;
+            font-size: $fs-16;
+            transition: 0.5s;
+
+            &:hover {
+                color: $black-color;
+                background-color: $secondary-color;
+            }
+
+            @media (max-width: 991px) {
+                font-size: $fs-12;
+            }
+
+            @media (max-width: 767px) {
+                font-size: $fs-8;
+            }
+
+            &.secondary {
+                background-color: transparent;
+                color: $primary-color;
+                border: 1px solid $primary-color;
+                border-radius: $fs-12;
+                transition: 0.5s;
+
+                &:hover {
+                    color: $black-color;
+                    border: 1px solid $secondary-color;
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+}

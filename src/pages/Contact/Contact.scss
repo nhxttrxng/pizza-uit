@@ -1,0 +1,50 @@
+.contact {
+    &-information {
+        border: 1px solid $primary-color;
+        padding: $fs-20;
+        border-radius: $fs-12;
+        margin: $fs-32 0;
+        &_text {
+            @include flexBox(space-between);
+            img {
+                width: 10%;
+                margin-left: auto;
+            }
+            h2 {
+                color: $primary-color;
+                margin-bottom: $fs-20;
+            }
+            @media (max-width: 767px) {
+                img {
+                    width: 15%;
+                }
+                h2 {
+                    font-size: $fs-20;
+                }
+            }
+        }
+        ul {
+            li {
+                margin-bottom: $fs-12;
+                a {
+                    color: $black-color;
+                    font-weight: 700;
+                    span {
+                        margin-left: $fs-20;
+                        font-weight: 400;
+                        transition: 0.5s;
+                    }
+                    &:hover {
+                        span {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                @media (max-width: 767px) {
+                    font-size: $fs-12;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,122 @@
+.footer {
+    &-top {
+        background-color: $primary-color;
+        padding: $fs-48;
+    }
+    &-branch {
+        @media (max-width: 767px) {
+            @include flexBox(center);
+            gap: $fs-40;
+            margin-bottom: $fs-40;
+        }
+    }
+    &-logo {
+        width: 40%;
+        @media (max-width: 767px) {
+            width: 15%;
+        }
+    }
+    &-social {
+        margin-top: $fs-20;
+        h4 {
+            color: $white-color;
+            font-size: $fs-16;
+        }
+        &_icon {
+            a {
+                color: $white-color;
+                margin-right: $fs-32;
+                transition: 0.5s;
+                &:hover {
+                    color: $third-color;
+                }
+            }
+        }
+    }
+
+    &-listmenu {
+        gap: $fs-32;
+        padding: $fs-20;
+        li {
+            font-size: $fs-14;
+            margin-bottom: 20px;
+            a {
+                color: $white-color;
+                transition: 0.2s;
+                font-weight: 500;
+                i {
+                    margin-right: $fs-12;
+                }
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+    &-timmig {
+        h5 {
+            color: $third-color;
+            font-size: $fs-16;
+            font-weight: 700;
+            margin: $fs-20 0;
+        }
+        p {
+            color: $white-color;
+            font-size: $fs-14;
+            span {
+                margin-left: $fs-8;
+                font-weight: 600;
+            }
+        }
+    }
+    &-instar {
+        @media (max-width: 991px) {
+            display: none;
+        }
+    }
+    &-image {
+        display: flex;
+        flex-wrap: wrap;
+        &_instar {
+            width: 28%;
+
+            margin-bottom: $fs-16;
+
+            img {
+                width: 90%;
+            }
+        }
+    }
+    &-bot {
+        background-color: $secondary-color;
+        padding: $fs-8;
+        h5 {
+            font-size: $fs-14;
+            text-align: center;
+            span {
+                font-weight: 600;
+            }
+        }
+    }
+    &-scrolltop {
+        color: $primary-color;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border: 1px solid $primary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: 0.5s;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 9999;
+        background-color: $secondary-color;
+        &.active {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,122 @@
+.header {
+    padding: $fs-24 $fs-32;
+    color: $white-color;
+    background-color: $primary-color;
+    @media (max-width: 991px) {
+        &::before {
+            @include beforeAfter(100%, 100%, rgba(0, 0, 0, 0.661));
+            @include posAbsolute("tr", 0, 0);
+            position: fixed;
+            transition: 0.3s;
+            opacity: 0;
+            z-index: 9;
+            visibility: hidden;
+        }
+        &.active {
+            &::before {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        padding: $fs-20;
+    }
+    &-container {
+        @include flexBox(space-between);
+    }
+    &-left {
+        @include flexBox(left);
+        gap: $fs-40;
+        &_logo {
+            width: 10%;
+            @media (max-width: 991px) {
+                width: 10%;
+            }
+            @media (max-width: 767px) {
+                width: 16%;
+            }
+        }
+        &_listmenu {
+            display: flex;
+            gap: $fs-32;
+            li {
+                font-size: $fs-14;
+                a {
+                    color: $white-color;
+                    transition: 0.2s;
+                    font-weight: 500;
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                }
+                @media (max-width: 991px) {
+                    padding: $fs-8;
+                    a {
+                        color: $black-color;
+                    }
+                }
+            }
+            &_close {
+                display: none;
+                text-align: right;
+                padding: 0 $fs-40 $fs-16 0;
+                i {
+                    color: $black-color;
+                    font-size: $fs-20;
+                }
+                @media (max-width: 991px) {
+                    display: block;
+                }
+            }
+            @media (max-width: 991px) {
+                @include posAbsolute("tr", 0, -100px);
+                position: fixed;
+                opacity: 0;
+                visibility: hidden;
+                width: 45%;
+                height: 100%;
+                background-color: $secondary-color;
+                transition: 0.5s;
+                display: block;
+                z-index: 9999;
+                padding-top: $fs-14;
+                &.active {
+                    opacity: 1;
+                    visibility: visible;
+                    right: 0;
+                    transition-delay: 0.2s;
+                }
+            }
+        }
+    }
+
+    &-right {
+        @include textDecorate($secondary-color, $fs-24);
+        &_quantitycart {
+            @include textDecorate($white-color, $fs-20);
+            position: relative;
+            margin-left: $fs-16;
+            display: inline-block;
+            transform: translateY(-2px);
+            span {
+                @include posAbsolute("tr", -$fs-16, -$fs-12);
+                @include textDecorate($secondary-color, $fs-16);
+            }
+        }
+        @media (max-width: 991px) {
+            &_quantitycart {
+                margin-right: $fs-32;
+            }
+        }
+    }
+    &-iconmenu {
+        display: none;
+        @media (max-width: 991px) {
+            display: block;
+        }
+        i {
+            @include textDecorate($secondary-color, $fs-20);
+        }
+    }
+}

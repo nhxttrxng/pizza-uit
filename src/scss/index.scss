@@ -1,0 +1,21 @@
+@import "variable";
+@import "mixin";
+@import "base";
+
+@import "../component/Header/Header";
+@import "../component/Headline/Headline";
+@import "../component/Footer/Footer";
+
+@import "../pages/Home/Banner/Banner";
+@import "../pages/Home/Pizza/Pizza";
+@import "../pages/Home/Map/Map";
+
+@import "../pages/About/About";
+@import "../pages/Contact/Contact";
+@import "../pages/Table/Table";
+@import "../pages/OrderProduct/OrderProduct";
+
+@import "../Admin/Login/Admin";
+@import "../Admin/HeaderAdmin/HeaderAdmin";
+@import "../Admin/ListMenu/ListMenu";
+@import "../Admin/ManageTable/ManageTable";
