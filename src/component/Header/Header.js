@@ -1,15 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import logo from "../../assets/logo/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
     const divRef = useRef(null);
+    const navigate = useNavigate()
     const iconRef = useRef();
     const [menu, setMenu] = useState(false);
 
     const handleShowMenu = () => {
         setMenu(!menu);
     };
+
+    const handleCheckout = ()=>{
+        navigate('/checkout')
+    }
 
     useEffect(() => {
         const handleClickOutside = (e) => {
@@ -50,6 +55,11 @@ const Header = () => {
                             <Link to="/table">ĐẶT BÀN</Link>
                         </li>
                     </ul>
+                </div>
+
+                <div className="cart-holder" onClick={handleCheckout}>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-number">2</span>
                 </div>
 
                 <div className="header-iconmenu" onClick={handleShowMenu}>

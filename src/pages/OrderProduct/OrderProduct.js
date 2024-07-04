@@ -19,6 +19,10 @@ const OrderProduct = () => {
         setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
     };
 
+    const updateCart = () => {
+
+    }
+
     useEffect(() => {
         const fetchFoods = async () => {
             try {
@@ -78,9 +82,9 @@ const OrderProduct = () => {
                                 <h5>{quantity}</h5>
                                 <i className="increment" onClick={handleIncrement}>+</i>
                             </div>
-                            <Link to="/checkout" class="orderProduct_button-1">
+                            <div class="orderProduct_button-1" onClick={updateCart}>
                                 Mua Ngay
-                            </Link>
+                            </div>
                         </div>
                     </Col>
                 </Row>
