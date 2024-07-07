@@ -115,8 +115,20 @@
         @media (max-width: 991px) {
             display: block;
         }
-        i {
-            @include textDecorate($secondary-color, $fs-20);
-        }
     }
+    i {
+        @include textDecorate($secondary-color, $fs-20);
+    }
+}
+
+.cart-holder{
+    display:flex;
+}
+
+.cart-number{
+    background-color: white;
+    color: black;
+    border-radius: 70%;
+    padding:2px 4px;
+    font-size: 10px;
 }
