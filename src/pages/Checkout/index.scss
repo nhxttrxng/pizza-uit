@@ -61,3 +61,17 @@
     display: flex;
     justify-content: space-between;
 }
+
+
+.checkout-btn{
+    margin-top: 20px;
+    padding: 4px 10px;
+    background-color: #910005;
+    color: white;
+    border-radius: 10px;
+    opacity: 0.8;
+
+    &:hover{
+        opacity: 1;
+    }
+}

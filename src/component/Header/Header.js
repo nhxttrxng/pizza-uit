@@ -59,7 +59,6 @@ const Header = () => {
 
                 <div className="cart-holder" onClick={handleCheckout}>
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="cart-number">2</span>
                 </div>
 
                 <div className="header-iconmenu" onClick={handleShowMenu}>
